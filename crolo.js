@@ -15,18 +15,17 @@ client.once('ready', () => {
 });
 
 client.on('guildMemberAdd', async (member) => {
-  const channel = member.guild.systemChannel || member.guild.channels.cache.find(
-    ch => ch.type === 0 && ch.permissionsFor(member.guild.members.me).has('SendMessages')
-  );
+  const channelId = '1436529752725786686';
+  const channel = member.guild.channels.cache.get(channelId);
 
-  if (!channel) return;
+  if (!channel || !channel.permissionsFor(member.guild.members.me).has('SendMessages')) return;
 
   const welcomeEmbed = new EmbedBuilder()
-    .setTitle('Welcome to the #1 MM crolo!')
+    .setTitle(`Welcome ${member.displayName} to Crolo MM #1 MM service`)
     .setImage('https://i.imgur.com/4tjImNm.png')
     .setColor(0x2f3136); // dark gray
 
-  channel.send({ content: `<@${member.id}>`, embeds: [welcomeEmbed] });
+  channel.send({ embeds: [welcomeEmbed] });
 });
 
 client.login(process.env.TOKEN);
