@@ -1,4 +1,3 @@
-// index.js
 const { Client, GatewayIntentBits, EmbedBuilder } = require('discord.js');
 require('dotenv').config();
 
@@ -25,7 +24,7 @@ client.on('guildMemberAdd', async (member) => {
   const welcomeEmbed = new EmbedBuilder()
     .setTitle('Welcome to the #1 MM crolo!')
     .setImage('https://i.imgur.com/4tjImNm.png')
-    .setColor(0x2f3136); // dark gray, tweak as needed
+    .setColor(0x2f3136); // dark gray
 
   channel.send({ content: `<@${member.id}>`, embeds: [welcomeEmbed] });
 });
