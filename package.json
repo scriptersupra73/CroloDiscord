@@ -1,13 +1,13 @@
 {
-  "name": "crolo",
+  "name": "crolo-bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "Welcome bot for crolo.gg",
   "main": "crolo.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node crolo.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs"
+  "dependencies": {
+    "discord.js": "^14.13.0",
+    "dotenv": "^16.3.1"
+  }
 }
