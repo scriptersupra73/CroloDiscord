@@ -1,7 +1,17 @@
-const { Client, GatewayIntentBits, EmbedBuilder } = require('discord.js');
-const { Client, GatewayIntentBits, EmbedBuilder, Events, REST, Routes, SlashCommandBuilder } = require('discord.js');
+// Import all necessary classes from discord.js
+const { 
+  Client, 
+  GatewayIntentBits, 
+  EmbedBuilder, 
+  Events, 
+  REST, 
+  Routes, 
+  SlashCommandBuilder 
+} = require('discord.js');
+
 require('dotenv').config();
 
+// Create client instance with required intents
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -89,13 +99,6 @@ client.on(Events.InteractionCreate, async interaction => {
   if (!interaction.isChatInputCommand()) return;
 
   if (interaction.commandName === 'embed') {
-    // Check if user has a specific role (you can customize this)
-    const friendRoleId = 'ROLE_ID_HERE'; // Replace with actual role ID
-    
-    // Check if user has the role (if you want to restrict usage)
-    // const hasRole = interaction.member.roles.cache.has(friendRoleId);
-    // For now, let's allow anyone to use it as you requested
-    
     try {
       const title = interaction.options.getString('title');
       const description = interaction.options.getString('description');
