@@ -84,7 +84,7 @@ client.on('guildMemberAdd', async (member) => {
     const welcomeEmbed = new EmbedBuilder()
       .setTitle(`Welcome ${member.displayName} to Crolo MM #1 MM service`)
       .setDescription(`We're glad to have you here!\n\n**Member #${memberCount}**`)
-      .setImage('https://i.imgur.com/4tjImNm.png')
+      .setImage('https://i.imgur.com/YT18hQS.png')
       .setColor(0x2f3136) // dark gray
       .setTimestamp();
 
