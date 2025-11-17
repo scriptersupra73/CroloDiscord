@@ -69,7 +69,7 @@ client.once('ready', async () => {
 
 client.on('guildMemberAdd', async (member) => {
   try {
-    const channelId = '1436529752725786686';
+    const channelId = '1439781085583114372';
     const channel = member.guild.channels.cache.get(channelId);
 
     // Check if channel exists and bot has permission to send messages
